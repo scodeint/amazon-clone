@@ -3,6 +3,7 @@ import Checkout from "./Checkout";
 import './App.css';
 import Header from './Header';
 import Home from './Home';
+import Login from './Login';
 
 
 function App() {
@@ -11,10 +12,11 @@ function App() {
     <div className="App">
       
         <Router>
-          <Header />
+        <Header />  
           <Routes>
-            <Route path="/" element={<Home />} /> 
+            <Route path="/" element={<Home />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Router>
     </div>
