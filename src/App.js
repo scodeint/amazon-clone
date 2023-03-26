@@ -5,9 +5,10 @@ import './App.css';
 import Header from './Header';
 import Home from './Home';
 import Login from './Login';
+import Payment from "./Payment";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
-import { type } from "@testing-library/user-event/dist/type";
+
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/payment" element={<Payment />} />
           </Routes>
         </Router>
     </div>
