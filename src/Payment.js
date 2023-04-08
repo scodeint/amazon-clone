@@ -27,7 +27,7 @@ function Payment() {
             const response = await axios({
                 method: 'post',
                 // stripe expect the total in a currencies subunits
-                url: `/payment/create?total = ${getBasketTotal(basket) ^ 100}`
+                url: `/payment/create?total = ${getBasketTotal(basket) * 100}`
             });
             setClientSecret(response.data.clientSecret)
         }
@@ -50,7 +50,7 @@ function Payment() {
             setSucceeded(true);
             setError(null);
             setProcessing(false);
-            navigate.replace('/order');
+            navigate.replace('/orders');
         })
     }
 
@@ -119,7 +119,7 @@ function Payment() {
                         />
 
                         <button disabled={processing || disabled || succeede}>
-                            <span></span> {processing ? <p>Processing</p> : "Buy now.."}
+                            <span> {processing ? <p>Processing</p> : "Buy now.."}</span>
                         </button>
                         </div>
                         {/* Error */}
